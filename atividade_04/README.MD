@@ -69,3 +69,7 @@ Configura o servidor Nginx para:
 Onde:
 - `php-fpm -D`: Inicia o PHP-FPM em modo daemon.
 - `nginx -g 'daemon off;'`: Inicia o Nginx em primeiro plano para manter o container ativo.
+
+## Buildar e executar imagem
+* `docker build -t novo-joomla .` builda e cria a imagem docker.
+* `docker run -d -p 443:443 nginx-joomla` rodar container
