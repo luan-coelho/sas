@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+//Playfair
 public class Decifrador {
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -14,11 +15,11 @@ public class Decifrador {
         System.out.println("Texto decifrado: " + decifrar(textoCifrado, chave));
     }
 
-    public static String decifrar(String textoCifrado, String chave) {
+    public static String decifrar(String texto, String chave) {
         criarTabela(chave);
 
         StringBuilder textoDecifrado = new StringBuilder();
-        char[] textoPreparado = textoCifrado.toCharArray();
+        char[] textoPreparado = texto.toCharArray();
 
         for (int i = 0; i < textoPreparado.length; i += 2) {
             char a = textoPreparado[i];
@@ -29,10 +30,10 @@ public class Decifrador {
             int coluna2 = posicoes[b - 'A'].y;
 
             if (linha1 == linha2) {
-                coluna1 = (coluna1 + 4) % 5; // Move para a esquerda, ciclo no início se necessário
-                coluna2 = (coluna2 + 4) % 5; // 4 é usado em vez de -1 para evitar números negativos
+                coluna1 = (coluna1 + 4) % 5;
+                coluna2 = (coluna2 + 4) % 5;
             } else if (coluna1 == coluna2) {
-                linha1 = (linha1 + 4) % 5; // Move para cima, ciclo no início se necessário
+                linha1 = (linha1 + 4) % 5;
                 linha2 = (linha2 + 4) % 5;
             } else {
                 int temp = coluna1;
