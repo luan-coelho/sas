@@ -39,6 +39,4 @@ public class BobClient {
 
         socket.close();
     }
-
-    // Métodos encrypt e decrypt similares aos da classe AliceServer
 }

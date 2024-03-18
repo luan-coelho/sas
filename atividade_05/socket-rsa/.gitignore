@@ -40,3 +40,8 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+/alice_private_key.pem
+/alice_public_key.pem
+/bob_private_key.pem
+/bob_public_key.pem
