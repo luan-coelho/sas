@@ -13,14 +13,14 @@ Este guia mostra como instalar e configurar o MariaDB em um servidor Debian, inc
 Atualize os pacotes e instale o MariaDB:
 
 ```bash
-sudo apt update
-sudo apt install mariadb-server
-sudo mysql_secure_installation
+apt update
+apt install mariadb-server
+mysql_secure_installation
 ```
 #### Permitir Acesso Remoto
 
 ```bash
-sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+nano /etc/mysql/mariadb.conf.d/50-server.cnf
 ```
 
 Modifique a linha com bind-address para:
@@ -28,13 +28,13 @@ Modifique a linha com bind-address para:
 
 Salve e saia do arquivo. Reinicie o MariaDB:
 ```bash
-sudo systemctl restart mariadb
+systemctl restart mariadb
 ```
 
 #### Criar Banco de Dados e Usuário
 Acesse o MariaDB e crie um banco de dados e um usuário:
 ```bash
-sudo mysql -u root -p
+mysql -u root -p
 ```
 
 Dentro do MariaDB, execute:
