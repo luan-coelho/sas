@@ -1,0 +1,24 @@
+IP FIREWALL = 192.168.15.170/24
+
+VBOX NET0 - 192.168.56.103/24
+VBOX NET1 - 192.168.57.3/24
+
+JOOMLA - 192.168.56.100
+
+MySql - 192.168.56.105
+
+
+Horas
+apt install -y ntpdate
+apt install -y ntp
+
+nano /etc/ntp.conf
+
+Joguei isso dentro 
+server a.ntp.br
+server b.ntp.br
+server c.ntp.br
+
+iptables -A INPUT -p udp --sport 123 -j ACCEPT
+iptables -A OUTPUT -p udp --dport 123 -j ACCEPT
+ntpq -p
