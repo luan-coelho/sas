@@ -1,7 +1,7 @@
-IP FIREWALL = 192.168.15.170/24
+IP FIREWALL = 192.168.15.41/24
 
-VBOX NET0 - 192.168.56.103/24
-VBOX NET1 - 192.168.57.3/24
+VBOX NET0 - 192.168.56.107/24
+VBOX NET1 - 192.168.57.6/24
 
 JOOMLA - 192.168.56.100
 
@@ -22,3 +22,9 @@ server c.ntp.br
 iptables -A INPUT -p udp --sport 123 -j ACCEPT
 iptables -A OUTPUT -p udp --dport 123 -j ACCEPT
 ntpq -p
+
+iptables -A FORWARD -s 192.168.56.0/24 -m time --timestart 14:00 --timestop 18:00 -j REJECT
+iptables -A FORWARD -s 192.168.57.0/24 -m time --timestart 14:00 --timestop 18:00 -j REJECT
+
+iptables -L FORWARD -n --line-numbers
+iptables -D FORWARD <numero-regra>
